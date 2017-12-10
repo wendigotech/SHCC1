@@ -118,11 +118,11 @@ if ( ! function_exists( 'shcc_wp_enqueue_scripts' ) ) :
     wp_deregister_script( 'jqueryslim' );
     wp_enqueue_script( 'jqueryslim', 'https://code.jquery.com/jquery-3.2.1.slim.min.js', false, null, true);
 
-    wp_deregister_script( 'popper' );
-    wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js', false, null, true);
-
     wp_deregister_script( 'bootstrap' );
     wp_enqueue_script( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js', false, null, true);
+
+    wp_deregister_script( 'popper' );
+    wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js', false, null, true);
 
     /* Pinegrow generated Enqueue Scripts End */
 
@@ -156,6 +156,25 @@ endif;
 require_once "inc/wp_smart_navwalker.php";
 
     /* Pinegrow generated Include Resources End */
+
+  // Theme Support for WordPress Custom Headers
+    // https://codex.wordpress.org/Custom_Headers
+
+    $customheader_defaults = array(
+    	'default-image'          => '',
+    	'width'                  => 0,
+    	'height'                 => 0,
+    	'flex-height'            => false,
+    	'flex-width'             => false,
+    	'uploads'                => true,
+    	'random-default'         => false,
+    	'header-text'            => true,
+    	'default-text-color'     => '',
+    	'wp-head-callback'       => '',
+    	'admin-head-callback'    => '',
+    	'admin-preview-callback' => '',
+    );
+    add_theme_support( 'custom-header', $customheader_defaults );
 
     // Add Custom Logo Support
     // http://www.mavengang.com/2016/06/02/change-wordpress-custom-logo-class/
