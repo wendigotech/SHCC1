@@ -18,7 +18,7 @@ function shcc_wp_setup() {
      * Let WordPress manage the document title.
      */
     add_theme_support( 'title-tag' );
-    
+
     /*
      * Enable support for Post Thumbnails on posts and pages.
      */
@@ -55,7 +55,7 @@ if ( ! function_exists( 'shcc_wp_init' ) ) :
 
 function shcc_wp_init() {
 
-    
+
     // Use categories and tags with attachments
     register_taxonomy_for_object_type( 'category', 'attachment' );
     register_taxonomy_for_object_type( 'post_tag', 'attachment' );
@@ -66,7 +66,7 @@ function shcc_wp_init() {
     /* Pinegrow generated Custom Post Types Begin */
 
     /* Pinegrow generated Custom Post Types End */
-    
+
     /*
      * Register custom taxonomies. You can also move this code to a plugin.
      */
@@ -153,6 +153,43 @@ endif;
  * Resource files included by Pinegrow.
  */
 /* Pinegrow generated Include Resources Begin */
+require_once "inc/wp_smart_navwalker.php";
 
     /* Pinegrow generated Include Resources End */
+
+    // Add Custom Logo Support
+    // http://www.mavengang.com/2016/06/02/change-wordpress-custom-logo-class/
+
+    function shcc_wp_custom_logo_setup() {
+
+    add_theme_support( 'custom-logo', array(
+    	'height'      => 100,
+    	'width'       => 400,
+    	'flex-height' => true,
+    	'flex-width'  => true,
+    	'header-text' => array( 'site-title', 'site-description' ),
+    ) );
+
+    }
+    add_action( 'after_setup_theme', 'shcc_wp_custom_logo_setup' );
+
+
+    // Bootstrap navbar with wordpress custom logo
+    // http://www.mavengang.com/2016/06/02/change-wordpress-custom-logo-class/
+
+    function shcc_wp_the_custom_logo() {
+
+    	if ( function_exists( 'the_custom_logo' ) ) {
+    		the_custom_logo();
+    	}
+
+    }
+
+    add_filter('get_custom_logo','shcc_wp_change_logo_class');
+
+    function shcc_wp_change_logo_class($html)
+    {
+      $html = str_replace('custom-logo-link', 'navbar-brand logo-navbar-brand', $html);
+    	return $html;
+    }
 ?>
