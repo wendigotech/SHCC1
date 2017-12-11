@@ -6,14 +6,14 @@
         <meta name="description" content=""> 
         <meta name="author" content="">          
         <!-- Bootstrap core CSS -->                                             
-        <!-- Custom styles for this template -->                  
+        <!-- Custom styles for this template -->                           
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <?php wp_head(); ?>
-    </head>
+    </head>     
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav"> 
         <div class="container"> 
             <?php if ( ! has_custom_logo() ) : ?>
-                <a class="navbar-brand js-scroll-trigger title text-dark" href="<?php echo esc_url( get_home_url() ); ?>"><?php bloginfo( 'name' ); ?></a>
+                <a class="navbar-brand js-scroll-trigger title text-dark" href="<?php echo esc_url( get_home_url() ); ?>"><?php bloginfo( 'name' ); ?></a> 
             <?php else : ?>
                 <?php shcc_wp_the_custom_logo() ?>
             <?php endif; ?> 
@@ -21,24 +21,24 @@
                 <?php _e( 'Menu', 'shcc_wp' ); ?> 
                 <i class="fa fa-bars"></i> 
             </button>             
-            <div class="collapse navbar-collapse" id="navbarResponsive">
+            <div class="collapse navbar-collapse" id="navbarResponsive"> 
                 <?php
-                    PG_Smart_Walker_Nav_Menu::$options['template'] = '<li class="nav-item {CLASSES}" id="{ID}">
-                        <a class="nav-link js-scroll-trigger" {ATTRS}>{TITLE}</a>
+                    PG_Smart_Walker_Nav_Menu::$options['template'] = '<li class="nav-item {CLASSES}" id="{ID}"> 
+                        <a class="nav-link js-scroll-trigger" {ATTRS}>{TITLE}</a> 
                     </li>';
                     wp_nav_menu( array(
                         'menu' => 'primary',
                         'container' => '',
                         'items_wrap' => '<ul class="navbar-nav text-uppercase ml-auto %2$s" id="%1$s">%3$s</ul>',
                         'walker' => new PG_Smart_Walker_Nav_Menu()
-                ) ); ?>
+                ) ); ?> 
             </div>             
         </div>         
-    </nav>
-    <?php $image_attributes = wp_get_attachment_image_src( get_theme_mod( 'header_bkg' ), 'large' ); ?>
+    </nav>     
+    <?php $image_attributes = wp_get_attachment_image_src( get_theme_mod( 'header_bkg' ), 'cover' ); ?>
     <header class="masthead" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"> 
-        <div class="overlay"></div>
-        <div class="inner">
+        <div class="overlay"></div>         
+        <div class="inner"> 
             <div class="container"> 
                 <div class="row"> 
                     <div class="col-md-6 left"> 
@@ -128,12 +128,12 @@
                                         </div>                                         
                                     </fieldset>                                     
                                 </form>                                 
-                            </div>
+                            </div>                             
                             <!-- /.col-lg-12 -->                             
-                        </div>
+                        </div>                         
                         <!-- /.row -->                         
                     </div>                     
-                </div>
-        </div>
-    </header>
+                </div>                 
+            </div>
+    </header>     
     <body>

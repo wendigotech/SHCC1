@@ -86,14 +86,14 @@ header.masthead {
     -o-background-size: cover;
     background-size: cover;
     background: url(../images/SHCC-top-img.jpg);
-    background-position: center center;
     background-color: #000;
-    position: relative;
     background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .masthead {
-    padding: 100px 0;
+    padding: 50px 0 75px;
+    position: relative;
 }
 
 header.masthead .intro-text {
