@@ -1,7 +1,7 @@
 
 
         <?php wp_footer(); ?>
-    </body>
+    </body>     
     <section class="footer"> 
         <div class="container"> 
             <div class="row"> 
@@ -11,5 +11,5 @@
                 </div>                 
             </div>             
         </div>         
-    </section>
+    </section>                    
 </html>

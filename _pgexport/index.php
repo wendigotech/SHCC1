@@ -14,7 +14,7 @@ get_header(); ?>
               <div class="col-md-1"></div>                     
           </div>                 
       </div>             
-  </section>
+  </section>         
   <section class="two-col" id="about" title="About"> 
       <div class="container"> 
           <div class="row"> 
@@ -67,7 +67,7 @@ get_header(); ?>
                   </div>                         
               </div>                     
           </div>                 
-  </section>
+  </section>         
   <section class="help centered"> 
       <div class="container"> 
           <div class="row"> 
@@ -101,16 +101,16 @@ get_header(); ?>
               </div>                     
           </div>                 
       </div>             
-  </section>
+  </section>         
   <section class="mind-section"> 
       <div class="container"> 
           <div class="row"> 
               <div class="col-md-2"></div>                     
               <div class="col-md-8 centered"> 
-                  <h3><?php _e( 'Peace Of Mind Could Be 30 Seconds Away', 'shcc_wp' ); ?></h3>
+                  <h3><?php _e( 'Peace Of Mind Could Be 30 Seconds Away', 'shcc_wp' ); ?></h3> 
                   <br> 
-                  <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/SHCC-mind.png">
-                  <br>
+                  <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/SHCC-mind.png"> 
+                  <br> 
                   <br> 
                   <a class="btn btn-primary btn-xl text-truncate" href="#services"><?php _e( 'Fill Out A Free Case Evaluation Form Now', 'shcc_wp' ); ?></a> 
               </div>                     

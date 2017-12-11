@@ -115,7 +115,11 @@ function shcc_wp_customize_register( $wp_customize ) {
         'label' => __( 'Header Background', 'shcc_wp' ),
         'type' => 'media',
         'mime_type' => 'image',
-        'section' => 'header'
+        'section' => 'header',
+        'input_attrs' => 
+            array(
+                'style' => ' background-size: cover;'
+            )
     ) ) );
 
     /* Pinegrow generated Customizer Controls End */
@@ -175,39 +179,39 @@ require_once "inc/wp_smart_navwalker.php";
 
     /* Pinegrow generated Include Resources End */
 
-    // Add Custom Logo Support
-    // http://www.mavengang.com/2016/06/02/change-wordpress-custom-logo-class/
+      // Add Custom Logo Support
+      // http://www.mavengang.com/2016/06/02/change-wordpress-custom-logo-class/
 
-    function shcc_wp_custom_logo_setup() {
+      function shcc_wp_custom_logo_setup() {
 
-    add_theme_support( 'custom-logo', array(
-    	'height'      => 100,
-    	'width'       => 400,
-    	'flex-height' => true,
-    	'flex-width'  => true,
-    	'header-text' => array( 'site-title', 'site-description' ),
-    ) );
+      add_theme_support( 'custom-logo', array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+      ) );
 
-    }
-    add_action( 'after_setup_theme', 'shcc_wp_custom_logo_setup' );
+      }
+      add_action( 'after_setup_theme', 'shcc_wp_custom_logo_setup' );
 
 
-    // Bootstrap navbar with wordpress custom logo
-    // http://www.mavengang.com/2016/06/02/change-wordpress-custom-logo-class/
+      // Bootstrap navbar with wordpress custom logo
+      // http://www.mavengang.com/2016/06/02/change-wordpress-custom-logo-class/
 
-    function shcc_wp_the_custom_logo() {
+      function shcc_wp_the_custom_logo() {
 
-    	if ( function_exists( 'the_custom_logo' ) ) {
-    		the_custom_logo();
-    	}
+        if ( function_exists( 'the_custom_logo' ) ) {
+          the_custom_logo();
+        }
 
-    }
+      }
 
-    add_filter('get_custom_logo','shcc_wp_change_logo_class');
+      add_filter('get_custom_logo','shcc_wp_change_logo_class');
 
-    function shcc_wp_change_logo_class($html)
-    {
-      $html = str_replace('custom-logo-link', 'navbar-brand logo-navbar-brand', $html);
-    	return $html;
-    }
+      function shcc_wp_change_logo_class($html)
+      {
+        $html = str_replace('custom-logo-link', 'navbar-brand logo-navbar-brand', $html);
+        return $html;
+      }
 ?>
