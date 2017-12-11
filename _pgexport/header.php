@@ -35,102 +35,105 @@
             </div>             
         </div>         
     </nav>
-    <?php $image_attributes = (is_singular() || in_the_loop()) ? wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ) ) : null; ?>
+    <?php $image_attributes = wp_get_attachment_image_src( get_theme_mod( 'header_bkg' ), 'large' ); ?>
     <header class="masthead" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"> 
-        <div class="container"> 
-            <div class="row"> 
-                <div class="col-md-6 left"> 
-                    <div class="intro-text">
-                        <?php _e( 'Have You Been… The Victim of Sexual Harassment?', 'shcc_wp' ); ?>
-                    </div>                     
-                    <div class="row intro-list"> 
-                        <!-- <ul>
+        <div class="overlay"></div>
+        <div class="inner">
+            <div class="container"> 
+                <div class="row"> 
+                    <div class="col-md-6 left"> 
+                        <div class="intro-text">
+                            <?php _e( 'Have You Been… The Victim of Sexual Harassment?', 'shcc_wp' ); ?>
+                        </div>                         
+                        <div class="row intro-list"> 
+                            <!-- <ul>
 	          		<li><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Has sexual harassment caused you shame, resentment, anger or humiliation?</li>
 					<li><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Are you afraid of losing your job or future employment in your field?</li>
 					<li><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Have you endured these emotions and thoughts in the workplace through no fault of your own?</li>
-				</ul>-->                         
-                        <div class="col-md-1"> 
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/SHCC-arrow-orange.png"> 
-                        </div>                         
-                        <div class="col-md-11"> 
-                            <p><?php _e( 'Has sexual harassment caused you shame, resentment, anger or humiliation?', 'shcc_wp' ); ?></p> 
-                        </div>                         
-                        <div class="col-md-1"> 
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/SHCC-arrow-orange.png"> 
-                        </div>                         
-                        <div class="col-md-11"> 
-                            <p><?php _e( 'Are you afraid of losing your job or future employment in your field?', 'shcc_wp' ); ?></p> 
-                        </div>                         
-                        <div class="col-md-1"> 
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/SHCC-arrow-orange.png"> 
-                        </div>                         
-                        <div class="col-md-11"> 
-                            <p><?php _e( 'Have you endured these emotions and thoughts in the workplace through no fault of your own?', 'shcc_wp' ); ?></p> 
+				</ul>-->                             
+                            <div class="col-md-1"> 
+                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/SHCC-arrow-orange.png"> 
+                            </div>                             
+                            <div class="col-md-11"> 
+                                <p><?php _e( 'Has sexual harassment caused you shame, resentment, anger or humiliation?', 'shcc_wp' ); ?></p> 
+                            </div>                             
+                            <div class="col-md-1"> 
+                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/SHCC-arrow-orange.png"> 
+                            </div>                             
+                            <div class="col-md-11"> 
+                                <p><?php _e( 'Are you afraid of losing your job or future employment in your field?', 'shcc_wp' ); ?></p> 
+                            </div>                             
+                            <div class="col-md-1"> 
+                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/SHCC-arrow-orange.png"> 
+                            </div>                             
+                            <div class="col-md-11"> 
+                                <p><?php _e( 'Have you endured these emotions and thoughts in the workplace through no fault of your own?', 'shcc_wp' ); ?></p> 
+                            </div>                             
                         </div>                         
                     </div>                     
-                </div>                 
-                <div class="col-md-6 custom-form"> 
-                    <div class="row"> 
-                        <div class="col-md-12"> 
-                            <form class="form-horizontal" role="form"> 
-                                <fieldset> 
-                                    <!-- Form Name -->                                     
-                                    <div class="form-title"> 
-                                        <legend>
-                                            <?php _e( 'Free No Obligation Consultation', 'shcc_wp' ); ?>
-                                        </legend>                                         
-                                    </div>                                     
-                                    <!-- Text input-->                                     
-                                    <div class="form-body"> 
-                                        <div class="form-group"> 
-                                            <div class="col-sm-12"> 
-                                                <input type="text" placeholder="First Name *" class="form-control"> 
-                                            </div>                                             
+                    <div class="col-md-6 custom-form"> 
+                        <div class="row"> 
+                            <div class="col-md-12"> 
+                                <form class="form-horizontal" role="form"> 
+                                    <fieldset> 
+                                        <!-- Form Name -->                                         
+                                        <div class="form-title"> 
+                                            <legend>
+                                                <?php _e( 'Free No Obligation Consultation', 'shcc_wp' ); ?>
+                                            </legend>                                             
                                         </div>                                         
                                         <!-- Text input-->                                         
-                                        <div class="form-group"> 
-                                            <div class="col-sm-12"> 
-                                                <input type="text" placeholder="Last Name *" class="form-control"> 
-                                            </div>                                             
-                                        </div>                                         
-                                        <!-- Text input-->                                         
-                                        <div class="form-group"> 
-                                            <div class="col-sm-12"> 
-                                                <input type="text" placeholder="Email *" class="form-control"> 
-                                            </div>                                             
-                                        </div>                                         
-                                        <!-- Text input-->                                         
-                                        <div class="form-group"> 
-                                            <div class="row"> 
-                                                <div class="col-md-6"> 
-                                                    <div class="col-sm-12"> 
-                                                        <input type="text" placeholder="Phone" class="form-control"> 
-                                                    </div>                                                     
-                                                </div>                                                 
-                                                <div class="col-md-6"> 
-                                                    <div class="col-sm-12"> 
-                                                        <input type="text" placeholder="Zip code*" class="form-control"> 
-                                                        <i class="zip-home-fa fa fa-info-circle" aria-hidden="true"></i> 
-                                                    </div>                                                     
+                                        <div class="form-body"> 
+                                            <div class="form-group"> 
+                                                <div class="col-sm-12"> 
+                                                    <input type="text" placeholder="First Name *" class="form-control"> 
                                                 </div>                                                 
                                             </div>                                             
-                                        </div>                                         
-                                        <!-- Text input-->                                         
-                                        <div class="form-group"> 
-                                            <div class="col-sm-12"> 
-                                                <input type="text" placeholder="Comments *" class="form-control"> 
-                                                <i class="comments-home-fa fa fa-info-circle" aria-hidden="true"></i> 
+                                            <!-- Text input-->                                             
+                                            <div class="form-group"> 
+                                                <div class="col-sm-12"> 
+                                                    <input type="text" placeholder="Last Name *" class="form-control"> 
+                                                </div>                                                 
                                             </div>                                             
+                                            <!-- Text input-->                                             
+                                            <div class="form-group"> 
+                                                <div class="col-sm-12"> 
+                                                    <input type="text" placeholder="Email *" class="form-control"> 
+                                                </div>                                                 
+                                            </div>                                             
+                                            <!-- Text input-->                                             
+                                            <div class="form-group"> 
+                                                <div class="row"> 
+                                                    <div class="col-md-6"> 
+                                                        <div class="col-sm-12"> 
+                                                            <input type="text" placeholder="Phone" class="form-control"> 
+                                                        </div>                                                         
+                                                    </div>                                                     
+                                                    <div class="col-md-6"> 
+                                                        <div class="col-sm-12"> 
+                                                            <input type="text" placeholder="Zip code*" class="form-control"> 
+                                                            <i class="zip-home-fa fa fa-info-circle" aria-hidden="true"></i> 
+                                                        </div>                                                         
+                                                    </div>                                                     
+                                                </div>                                                 
+                                            </div>                                             
+                                            <!-- Text input-->                                             
+                                            <div class="form-group"> 
+                                                <div class="col-sm-12"> 
+                                                    <input type="text" placeholder="Comments *" class="form-control"> 
+                                                    <i class="comments-home-fa fa fa-info-circle" aria-hidden="true"></i> 
+                                                </div>                                                 
+                                            </div>                                             
+                                            <a class="btn btn-primary btn-xl col-md-12 text-truncate" href="#services"><?php _e( 'Yes, I would like a free consultation', 'shcc_wp' ); ?></a> 
                                         </div>                                         
-                                        <a class="btn btn-primary btn-xl col-md-12" href="#services"><?php _e( 'Yes, I would like a free consultation', 'shcc_wp' ); ?></a> 
-                                    </div>                                     
-                                </fieldset>                                 
-                            </form>                             
+                                    </fieldset>                                     
+                                </form>                                 
+                            </div>
+                            <!-- /.col-lg-12 -->                             
                         </div>
-                        <!-- /.col-lg-12 -->                         
-                    </div>
-                    <!-- /.row -->                     
-                </div>                 
-            </div>
-    </header>     
+                        <!-- /.row -->                         
+                    </div>                     
+                </div>
+        </div>
+    </header>
     <body>

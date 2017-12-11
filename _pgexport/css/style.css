@@ -80,15 +80,16 @@ body {
 
 /* ---------- Header ---------- */
 header.masthead {
-    background: linear-gradient(rgba(65, 74, 88, 0.85), rgba(65, 74, 88, 0.85)), url(../images/SHCC-top-img.jpg);
-    background-repeat: no-repeat;
     background-attachment: scroll;
-    background-position: center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background: url(../images/SHCC-top-img.jpg);
+    background-position: center center;
     background-color: #000;
+    position: relative;
+    background-repeat: no-repeat;
 }
 
 .masthead {
@@ -447,6 +448,9 @@ select:-webkit-autofill {
     }
 }
 
+/* .dimmer {
+    background: linear-gradient(rgba(65, 74, 88, 0.85), rgba(65, 74, 88, 0.85));
+} */
 @media only screen 
   and (max-width: 768px) {
     .four-col .col-md-3 {
@@ -459,4 +463,19 @@ select:-webkit-autofill {
     .sh-form .comments-fa {
         display: none;
     }
+}
+
+.overlay {
+    background: linear-gradient(rgba(65, 74, 88, 0.85), rgba(65, 74, 88, 0.85));
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.inner {
+    position: relative;
+    z-index: 2;
 }

@@ -103,6 +103,21 @@ function shcc_wp_customize_register( $wp_customize ) {
 
     /* Pinegrow generated Customizer Controls Begin */
 
+    $wp_customize->add_section( 'header', array(
+        'title' => __( 'Header', 'shcc_wp' )
+    ));
+
+    $wp_customize->add_setting( 'header_bkg', array(
+        'type' => 'theme_mod'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'header_bkg', array(
+        'label' => __( 'Header Background', 'shcc_wp' ),
+        'type' => 'media',
+        'mime_type' => 'image',
+        'section' => 'header'
+    ) ) );
+
     /* Pinegrow generated Customizer Controls End */
 
 }
@@ -143,6 +158,9 @@ if ( ! function_exists( 'shcc_wp_enqueue_scripts' ) ) :
     wp_deregister_style( 'style' );
     wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css', false, null, 'all');
 
+    wp_deregister_style( 'fontawesome' );
+    wp_enqueue_style( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css', false, null, 'all');
+
     /* Pinegrow generated Enqueue Styles End */
 
     }
@@ -156,25 +174,6 @@ endif;
 require_once "inc/wp_smart_navwalker.php";
 
     /* Pinegrow generated Include Resources End */
-
-  // Theme Support for WordPress Custom Headers
-    // https://codex.wordpress.org/Custom_Headers
-
-    $customheader_defaults = array(
-    	'default-image'          => '',
-    	'width'                  => 0,
-    	'height'                 => 0,
-    	'flex-height'            => false,
-    	'flex-width'             => false,
-    	'uploads'                => true,
-    	'random-default'         => false,
-    	'header-text'            => true,
-    	'default-text-color'     => '',
-    	'wp-head-callback'       => '',
-    	'admin-head-callback'    => '',
-    	'admin-preview-callback' => '',
-    );
-    add_theme_support( 'custom-header', $customheader_defaults );
 
     // Add Custom Logo Support
     // http://www.mavengang.com/2016/06/02/change-wordpress-custom-logo-class/

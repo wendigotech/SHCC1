@@ -1,7 +1,7 @@
 <?php
 get_header(); ?>
 
-  <!-- Navigation -->                  
+  <!-- Navigation -->         
   <!-- Header -->         
   <section class="quote"> 
       <div class="container"> 
@@ -112,13 +112,13 @@ get_header(); ?>
                   <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/SHCC-mind.png">
                   <br>
                   <br> 
-                  <a class="btn btn-primary btn-xl" href="#services"><?php _e( 'Fill Out A Free Case Evaluation Form Now', 'shcc_wp' ); ?></a> 
+                  <a class="btn btn-primary btn-xl text-truncate" href="#services"><?php _e( 'Fill Out A Free Case Evaluation Form Now', 'shcc_wp' ); ?></a> 
               </div>                     
               <div class="col-md-2"></div>                     
           </div>                 
       </div>             
   </section>         
-  <!-- Quotation -->                  
-  <!-- Bootstrap core JavaScript -->                                            
+  <!-- Quotation -->         
+  <!-- Bootstrap core JavaScript -->                 
 
 <?php get_footer(); ?>
